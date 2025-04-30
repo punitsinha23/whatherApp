@@ -122,6 +122,22 @@ export default function App() {
 
         {data && (
           <View style={styles.card}>
+            {(() => {
+  const temp = data.current.temperature_2m;
+
+        if (temp >= 35) {
+          return <Text style={styles.weatherType}>Extremely Hot</Text>;
+        } else if (temp >= 25) {
+          return <Text style={styles.weatherType}>Warm</Text>;
+        } else if (temp >= 15) {
+          return <Text style={styles.weatherType}>Pleasant</Text>;
+        } else if (temp >= 5) {
+          return <Text style={styles.weatherType}>Cool</Text>;
+        } else {
+          return <Text style={styles.weatherType}>Cold</Text>;
+        }
+      })()}
+
             <Image
               source={isDay ? require('./assets/sun.png') : require('./assets/moon.png')}
               style={styles.weatherIcon}
@@ -246,4 +262,9 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#0066cc',
   },
+
+  weatherType:{
+    marginBottom:"20px",
+    fontWeight:"bold"
+  }
 });
