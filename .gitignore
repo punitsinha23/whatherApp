@@ -1,36 +1,42 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Node modules and lock files
 node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+package-lock.json
+pnpm-lock.yaml
 
-# Expo
+# Build outputs
 .expo/
 dist/
 web-build/
-expo-env.d.ts
+build/
 
-# Native
-*.orig.*
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store
+
+# Expo debug/health check
+.expo-shared/
+.metro-health-check/
+
+# Credentials
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
 *.pem
 
-# local env files
-.env*.local
+# Misc
+*.apk
+*.aab
+*.zip
+*.tar.gz
 
-# typescript
-*.tsbuildinfo
+# Local environments
+.env
+.env.*
