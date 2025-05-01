@@ -13,7 +13,7 @@
     },
     "production": {
       "android": {
-        "buildType": "apk" // or "aab" if you're submitting to Play Store
+        "buildType": "apk" 
       },
       "autoIncrement": true
     }

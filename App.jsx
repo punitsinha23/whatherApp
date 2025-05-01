@@ -39,7 +39,7 @@ export default function App() {
       setData(weatherData);
 
       const time = weatherData.current.time;
-      const hour = time.slice(11, 16);
+      const hour = time.slice(11, 13);
       const intHour = parseInt(hour);
       setIsDay(intHour >= 6 && intHour < 18);
 
@@ -139,7 +139,11 @@ export default function App() {
       })()}
 
             <Image
-              source={isDay ? require('./assets/sun.png') : require('./assets/moon.png')}
+              source={{
+                uri: isDay
+                  ? 'https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/75176/sun-icon-clipart-md.png'
+                  : 'https://www.pngkey.com/png/full/52-528653_cresent-moon-png.png'
+              }}
               style={styles.weatherIcon}
             />
             <Text style={styles.temperature}>{data.current.temperature_2m}°C</Text>
