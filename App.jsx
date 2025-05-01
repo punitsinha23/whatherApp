@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
   },
 
   weatherType:{
-    marginBottom:"20px",
+    marginBottom:"40px",
     fontWeight:"bold"
   }
 });
